@@ -4,9 +4,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static org.junit.Assert.*;
+
 class IsItFriday {
     static String isItFriday(String today) {
-        return null;
+        return "Friday".equals(today) ? "TGIF" : "Nope";
     }
 }
 
@@ -29,6 +31,11 @@ public class Stepdefs {
 
     @Then("^I should be told \"([^\"]*)\"$")
     public void I_should_be_bold(String expectedAnswer) {
-        assertEquals(expectedAnswer, actualAnswer)
+        assertEquals(expectedAnswer, actualAnswer);
+    }
+
+    @Given("today is Friday")
+    public void today_is_Friday(){
+        today = "Friday";
     }
 }
