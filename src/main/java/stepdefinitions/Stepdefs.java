@@ -18,7 +18,7 @@ public class Stepdefs {
     private String actualAnswer;
 
     @Given("today is {string}")
-    public void today_is_Sunday() {
+    public void today_is_(String today) {
         this.today = today;
     }
 
@@ -30,9 +30,10 @@ public class Stepdefs {
     }
 
     @Then("I should be told {string}")
-    public void I_should_be_bold(String expectedAnswer) {
+    public void i_should_be_told(String expectedAnswer) {
+
         assertEquals(expectedAnswer, actualAnswer);
     }
 
-    }
 }
+
